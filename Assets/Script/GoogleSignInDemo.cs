@@ -1,12 +1,14 @@
-﻿using Firebase;
-using Firebase.Auth;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using Firebase;
+using Firebase.Auth;
+using Google;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CheckClick : MonoBehaviour
+public class GoogleSignInDemo : MonoBehaviour
 {
     public Text infoText;
     public string webClientId = "<your client id here>";
