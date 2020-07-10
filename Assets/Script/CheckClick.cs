@@ -110,29 +110,9 @@ public class CheckClick : MonoBehaviour
             else
             {
                 AddToInformation("Sign In Successful.");
+                print("Sign In Successful......................");
             }
         });
-    }
-
-    public void OnSignInSilently()
-    {
-        GoogleSignIn.Configuration = configuration;
-        GoogleSignIn.Configuration.UseGameSignIn = false;
-        GoogleSignIn.Configuration.RequestIdToken = true;
-        AddToInformation("Calling SignIn Silently");
-
-        GoogleSignIn.DefaultInstance.SignInSilently().ContinueWith(OnAuthenticationFinished);
-    }
-
-    public void OnGamesSignIn()
-    {
-        GoogleSignIn.Configuration = configuration;
-        GoogleSignIn.Configuration.UseGameSignIn = true;
-        GoogleSignIn.Configuration.RequestIdToken = false;
-
-        AddToInformation("Calling Games SignIn");
-
-        GoogleSignIn.DefaultInstance.SignIn().ContinueWith(OnAuthenticationFinished);
     }
 
     private void AddToInformation(string str) { infoText.text += "\n" + str; }
